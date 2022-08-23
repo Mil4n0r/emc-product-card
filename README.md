@@ -2,26 +2,29 @@
 
 Este es un paquete de pruebas de despliegue en NPM
 
-## Enrique Moreno Carmona
+### Enrique Moreno
+
+## Ejemplo
+```
+import { ProductCard, ProductImage, ProductTitle, ProductButtons } from 'do-product-card';
+```
 
 ```
-import { ProductCard, ProductImage, ProductTitle,  ProductButtons } from 'emc-product-card
-```
-
-```
-<ProductCard
-  product={product}
-  initialValues={{
-    count: 4,
-    maxCount: 10,
-  }}
+<ProductCard 
+    product={ product }
+    initialValues={{
+        count: 6,
+        // maxCount: 10,
+    }}
 >
-  {({ count, increaseBy, isMaxCountReached, maxCount, reset }) => (
-    <>
-      <ProductCard.Image />
-      <ProductCard.Title />
-      <ProductCard.Buttons />
-    </>
-  )}
+    {
+        ({ reset, count, isMaxCountReached, maxCount, increaseBy  }) => (
+            <>
+                <ProductImage />
+                <ProductTitle />
+                <ProductButtons />
+            </>
+        )
+    }
 </ProductCard>
 ```
